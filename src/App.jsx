@@ -1,13 +1,13 @@
 import "./index.css";
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
-import ApplicationsPage from "./components/ApplicationsPage"
-import Analytics from "./components/Analytics"
-import Profile from "./components/Profile";
+import Navbar from "./components/Navbar.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import ApplicationsPage from "./components/ApplicationsPage.jsx"
+import Analytics from "./components/Analytics.jsx"
+import Profile from "./components/Profile.jsx";
 import { useState, useEffect } from "react";
 import { supabase } from "./supabase";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Auth from "./components/Auth"
+import Auth from "./components/Auth.jsx"
 
 const App = () => {
   const [jobs, setJobs] = useState([]);

@@ -1,6 +1,6 @@
-import ApplicationForm from './ApplicationForm'
-import EditForm from './EditForm'
-import Transaction from './Transaction'
+import ApplicationForm from './ApplicationForm.jsx'
+import EditForm from './EditForm.jsx'
+import Transaction from './Transaction.jsx'
 
 const ApplicationsPage = ({isUpdateOpen, isOpen, handleChange, addJobs, setIsOpen, setApplicationForm, setIsUpdateOpen, applicationForm, loading, updateJob, jobs, deleteJob }) => {
   return (

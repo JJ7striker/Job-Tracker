@@ -1,8 +1,8 @@
 import { Plus } from "lucide-react";
-import Indicators from "./Indicators";
+import Indicators from "./Indicators.jsx";
 import Transaction from "./Transaction";
-import ApplicationForm from "./ApplicationForm";
-import EditForm from "./EditForm";
+import ApplicationForm from "./ApplicationForm.jsx";
+import EditForm from "./EditForm.jsx";
 import { useState } from "react";
 import { Loader, LogOut } from 'lucide-react';
 
