@@ -51,7 +51,7 @@ const Profile = ({ session, handleSignOut }) => {
               <div className='flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-100 shadow-2xs min-w-0'>
                 <Shield className="h-5 w-5 text-slate-400 shrink-0 mt-0.5" />
                 <div className="min-w-0">
-                  <p className='text-xs font-bold text-slate-400 uppercase tracking-wide'>Unique User ID</p>
+                  <p className='text-xs font-bold text-slate-400 uppercase tracking-wide'>Your User ID</p>
                   <p className='text-sm font-mono text-slate-600 break-all mt-0.5 bg-slate-50 p-1.5 rounded border border-slate-100 select-all'>
                     {user.id}
                   </p>
@@ -62,7 +62,7 @@ const Profile = ({ session, handleSignOut }) => {
               <div className='flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-100 shadow-2xs'>
                 <Calendar className="h-5 w-5 text-cyan-600 shrink-0 mt-0.5" />
                 <div>
-                  <p className='text-xs font-bold text-slate-400 uppercase tracking-wide'>System Presence Log</p>
+                  <p className='text-xs font-bold text-slate-400 uppercase tracking-wide'>Last Seen</p>
                   <p className='text-sm text-slate-700 font-medium mt-0.5'>
                     You last interacted with the app on <span className="text-cyan-700 font-semibold">{new Date(user.last_sign_in_at).toLocaleDateString(undefined, { dateStyle: 'long' })}</span>
                   </p>
@@ -81,7 +81,7 @@ const Profile = ({ session, handleSignOut }) => {
               }}
               disabled={loading}
             >
-              {loading ? <Loader className="h-4 w-4 animate-spin" /> : <LogOut className="h-4 w-4" />}
+              {loading ? <Loader className="h-4 w-4 animate-spin [animation-duration:3s]" /> : <LogOut className="h-4 w-4" />}
               <span>Sign Out of Account</span>
             </button>
           </div>

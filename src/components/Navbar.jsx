@@ -9,7 +9,18 @@ const Navbar = () => {
 
 
 
-    <div className={`sticky top-0 left-0 w-2.5/5 min-h-screen bg-cyan-900 z-50 md:min-h-screen md:w-[23%] lg:w-[15%] md:flex md:flex-col md:justify-start md:items-start md:pr-8 ${menuOpen ? 'w-48' : 'w-20'}`}>
+    <div className={`sticky top-0 left-0
+    min-h-screen
+    bg-cyan-900
+    z-50
+    transition-all duration-300
+
+    flex flex-col
+
+    ${menuOpen ? 'w-48' : 'w-20'}
+
+    md:w-[23%]
+    lg:w-[15%]}`}>
        <button
           type="button"
           onClick={() => setMenuOpen((prev) => !prev)}

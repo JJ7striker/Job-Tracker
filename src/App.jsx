@@ -193,40 +193,66 @@ const App = () => {
 
   return (
     <Router>
-      { session ? (
-    <div className="min-h-screen min-w-full flex">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={
-      <Dashboard
-        jobs={jobs}
-        loading={loading}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        applicationForm={applicationForm}
-        setApplicationForm={setApplicationForm}
-        handleChange={handleChange}
-        addJobs={addJobs}
-        deleteJob={deleteJob}
-        filteredInterviewing={filteredInterviewing}
-        filteredOffers={filteredOffers}
-        filteredRejection={filteredRejection}
-        job={jobs}
-        isUpdateOpen={isUpdateOpen}
-        setIsUpdateOpen={setIsUpdateOpen}
-        updateJob={updateJob}
-        handleSignOut={handleSignOut}
-        deleteAll={deleteAll}
-        session={session}
-      />} />
+      {session ? (
+        // The main dashboard structural flex layout
+        <div className="min-h-screen w-full flex bg-slate-50 overflow-x-hidden">
+          
+          {/* 1. Left Sidebar Navigation */}
+          <Navbar />
+          
+          {/* 2. THE FIX: The page viewport layout engine wrapper */}
+          <div className="flex-1 min-w-0 w-full">
+            <Routes>
+              <Route path="/" element={
+                <Dashboard
+                  jobs={jobs}
+                  loading={loading}
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                  applicationForm={applicationForm}
+                  setApplicationForm={setApplicationForm}
+                  handleChange={handleChange}
+                  addJobs={addJobs}
+                  deleteJob={deleteJob}
+                  filteredInterviewing={filteredInterviewing}
+                  filteredOffers={filteredOffers}
+                  filteredRejection={filteredRejection}
+                  job={jobs}
+                  isUpdateOpen={isUpdateOpen}
+                  setIsUpdateOpen={setIsUpdateOpen}
+                  updateJob={updateJob}
+                  handleSignOut={handleSignOut}
+                  deleteAll={deleteAll}
+                  session={session}
+                />
+              } />
 
-      <Route path="/applications" element={<ApplicationsPage isUpdateOpen={isUpdateOpen} isOpen={isOpen} handleChange={handleChange} addJobs={addJobs} setIsOpen={setIsOpen} setApplicationForm={setApplicationForm} applicationForm={applicationForm} setIsUpdateOpen={setIsUpdateOpen} loading={loading} updateJob={updateJob} jobs={jobs} deleteJob={deleteJob} />} />
-      <Route path="/analytics" element={<Analytics jobs={jobs} />} />
-      <Route path="/profile" element={<Profile session={session} handleSignOut={handleSignOut} />} />
-      </Routes>
-    </div>
-      ) : <Auth session={session} />
-}
+              <Route path="/applications" element={
+                <ApplicationsPage 
+                  isUpdateOpen={isUpdateOpen} 
+                  isOpen={isOpen} 
+                  handleChange={handleChange} 
+                  addJobs={addJobs} 
+                  setIsOpen={setIsOpen} 
+                  setApplicationForm={setApplicationForm} 
+                  applicationForm={applicationForm} 
+                  setIsUpdateOpen={setIsUpdateOpen} 
+                  loading={loading} 
+                  updateJob={updateJob} 
+                  jobs={jobs} 
+                  deleteJob={deleteJob} 
+                />
+              } />
+              
+              <Route path="/analytics" element={<Analytics jobs={jobs} />} />
+              <Route path="/profile" element={<Profile session={session} handleSignOut={handleSignOut} />} />
+            </Routes>
+          </div>
+
+        </div>
+      ) : (
+        <Auth session={session} />
+      )}
     </Router>
   );
 }

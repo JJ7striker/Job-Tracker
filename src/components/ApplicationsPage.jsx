@@ -4,8 +4,8 @@ import Transaction from './Transaction.jsx'
 
 const ApplicationsPage = ({isUpdateOpen, isOpen, handleChange, addJobs, setIsOpen, setApplicationForm, setIsUpdateOpen, applicationForm, loading, updateJob, jobs, deleteJob }) => {
   return (
-    <div className='w-full min-h-screen bg-slate-50 pb-12'>
-      <h2 className='text-xl md:text-3xl mt-2 lg:3xl text-center font-medium mb-7 md:mt-5'>Get All Applications Here</h2>
+    <div className='w-full flex-1 min-h-dvh bg-slate-50 pb-12'>
+      <h2 className='text-xl w-full md:text-3xl mt-2 lg:3xl text-center font-medium mb-7 md:mt-5'>Get All Applications Here</h2>
      {isUpdateOpen && (
             <EditForm setIsUpdateOpen={setIsUpdateOpen} applicationForm={applicationForm} handleChange={handleChange} jobOperation={updateJob} />
           )}
@@ -19,8 +19,8 @@ const ApplicationsPage = ({isUpdateOpen, isOpen, handleChange, addJobs, setIsOpe
             />
           )}
     
-          <div className="w-full h-auto px-5">
-            <div className="hidden md:w-full md:h-auto md:p-2 md:grid md:grid-cols-5 md:border-b-[1px] md:border-gray-600/30 md:gap-2 md:justify-items-center">
+          <div className="w-full px-5">
+            <div className="hidden md:w-full md:p-2 md:grid md:grid-cols-5 md:border-b-[1px] md:border-gray-600/30 md:gap-2 md:justify-items-center">
               <h3 className=" justify-center ml-2">Company</h3>
               <h3 className=" justify-center ml-2">Role</h3>
               <h3 className=" justify-center ml-2">Status</h3>
@@ -35,7 +35,7 @@ const ApplicationsPage = ({isUpdateOpen, isOpen, handleChange, addJobs, setIsOpe
                 <Transaction key={job.id} job={job} deleteJob={deleteJob} isUpdateOpen={isUpdateOpen} setIsUpdateOpen={setIsUpdateOpen} setApplicationForm={setApplicationForm}   />
               ))
             ) : (
-              <p className="text-center ml-[300px] mt-[100px] text-3xl font-medium italic">
+              <p className="w-full text-xl font-medium italic">
                 View and Edit All Applications Here...
               </p>
             )}
